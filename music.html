@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="music.css">
+</head>
+<body>
+
+    <!-- Spotify Top Navigation -->
+    <header class="spotify-navbar">
+        <div class="nav-left">
+            <div class="spotify-logo">
+                <i class="fa-brands fa-spotify"></i> Spotify Clone
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#" id="search-nav"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+                <a href="#"><i class="fa-solid fa-book"></i> Your Library</a>
+                <a href="#"><i class="fa-solid fa-square-plus"></i> Create Playlist</a>
+                <a href="#"><i class="fa-solid fa-heart"></i> Liked Songs</a>
+            </nav>
+        </div>
+        <div class="nav-right">
+            <!-- Search Input for Filtering -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search songs or artists...">
+            </div>
+            <button class="upgrade-btn">Upgrade</button>
+            <div class="user-profile">
+                <span class="avatar">JS</span>
+                <span class="username">Jon S.</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Top Genres Section -->
+        <section class="genres-section">
+            <h2>Top Genres</h2>
+            <div class="genres-grid">
+                <div class="genre-card pop"><span>Pop</span><i class="fa-solid fa-microphone"></i></div>
+                <div class="genre-card hiphop"><span>Hip Hop</span><i class="fa-solid fa-music"></i></div>
+                <div class="genre-card rock"><span>Rock</span><i class="fa-solid fa-guitar"></i></div>
+                <div class="genre-card indie"><span>Indie</span><i class="fa-solid fa-tree"></i></div>
+                <div class="genre-card music"><span>Music</span><i class="fa-brands fa-spotify"></i></div>
+            </div>
+        </section>
+
+        <!-- Music Player Card -->
+        <div class="music-player-card">
+            <h2>Now Playing</h2>
+
+            <div class="track-info">
+                <div class="img-container">
+                    <img src="" alt="Album Art" id="track-image">
+                </div>
+                <div class="track-details">
+                    <div id="track-title" class="title">Song Title</div>
+                    <div id="track-artist" class="artist">Artist Name</div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar" id="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <span id="duration">0:00</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button id="prev" title="Previous"><i class="fa-solid fa-backward-step"></i></button>
+                <button id="play" class="play-btn" title="Play/Pause"><i class="fa-solid fa-play" id="play-icon"></i></button>
+                <button id="next" title="Next"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+
+            <!-- Volume -->
+            <div class="volume-container">
+                <i class="fa-solid fa-volume-high"></i>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+            </div>
+
+            <!-- Playlist Section -->
+            <div class="playlist-container">
+                <h3>Playlist</h3>
+                <ul id="playlist" class="playlist">
+                    <!-- Populated dynamically via JS -->
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="music.js"></script>
+</body>
+</html>
